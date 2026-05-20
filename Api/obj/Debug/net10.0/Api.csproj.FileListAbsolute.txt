@@ -37,3 +37,12 @@ C:\Users\LENOVO\Documents\Campus\net\VotingRealTime\Api\obj\Debug\net10.0\refint
 C:\Users\LENOVO\Documents\Campus\net\VotingRealTime\Api\obj\Debug\net10.0\Api.pdb
 C:\Users\LENOVO\Documents\Campus\net\VotingRealTime\Api\obj\Debug\net10.0\Api.genruntimeconfig.cache
 C:\Users\LENOVO\Documents\Campus\net\VotingRealTime\Api\obj\Debug\net10.0\ref\Api.dll
+C:\Users\LENOVO\Documents\Campus\net\VotingRealTime\Api\bin\Debug\net10.0\FluentValidation.dll
+C:\Users\LENOVO\Documents\Campus\net\VotingRealTime\Api\bin\Debug\net10.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\LENOVO\Documents\Campus\net\VotingRealTime\Api\bin\Debug\net10.0\MediatR.dll
+C:\Users\LENOVO\Documents\Campus\net\VotingRealTime\Api\bin\Debug\net10.0\MediatR.Contracts.dll
+C:\Users\LENOVO\Documents\Campus\net\VotingRealTime\Api\bin\Debug\net10.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\LENOVO\Documents\Campus\net\VotingRealTime\Api\bin\Debug\net10.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\LENOVO\Documents\Campus\net\VotingRealTime\Api\bin\Debug\net10.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\LENOVO\Documents\Campus\net\VotingRealTime\Api\bin\Debug\net10.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\LENOVO\Documents\Campus\net\VotingRealTime\Api\obj\Debug\net10.0\Api.sourcelink.json

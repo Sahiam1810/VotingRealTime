@@ -13,3 +13,4 @@ C:\Users\LENOVO\Documents\Campus\net\VotingRealTime\Application\obj\Debug\net10.
 C:\Users\LENOVO\Documents\Campus\net\VotingRealTime\Application\obj\Debug\net10.0\refint\Application.dll
 C:\Users\LENOVO\Documents\Campus\net\VotingRealTime\Application\obj\Debug\net10.0\Application.pdb
 C:\Users\LENOVO\Documents\Campus\net\VotingRealTime\Application\obj\Debug\net10.0\ref\Application.dll
+C:\Users\LENOVO\Documents\Campus\net\VotingRealTime\Application\obj\Debug\net10.0\Application.sourcelink.json
