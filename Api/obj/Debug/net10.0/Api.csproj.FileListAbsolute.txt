@@ -46,3 +46,6 @@ C:\Users\LENOVO\Documents\Campus\net\VotingRealTime\Api\bin\Debug\net10.0\Micros
 C:\Users\LENOVO\Documents\Campus\net\VotingRealTime\Api\bin\Debug\net10.0\Microsoft.IdentityModel.Logging.dll
 C:\Users\LENOVO\Documents\Campus\net\VotingRealTime\Api\bin\Debug\net10.0\Microsoft.IdentityModel.Tokens.dll
 C:\Users\LENOVO\Documents\Campus\net\VotingRealTime\Api\obj\Debug\net10.0\Api.sourcelink.json
+C:\Users\LENOVO\Documents\Campus\net\VotingRealTime\Api\bin\Debug\net10.0\Api.staticwebassets.runtime.json
+C:\Users\LENOVO\Documents\Campus\net\VotingRealTime\Api\obj\Debug\net10.0\compressed\3m8nc8hszb-{0}-xivzqnfes0-xivzqnfes0.gz
+C:\Users\LENOVO\Documents\Campus\net\VotingRealTime\Api\obj\Debug\net10.0\compressed\a3nxsirztv-{0}-2zmtg8ae1r-2zmtg8ae1r.gz

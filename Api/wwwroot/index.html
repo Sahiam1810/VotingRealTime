@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VotingRealTime 🗳️</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: #1a1a2e;
+            color: #eee;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 8px;
+            color: #e94560;
+        }
+
+        #status {
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 30px;
+        }
+
+        #status.connected { color: #4caf50; }
+        #status.disconnected { color: #e94560; }
+
+        .card {
+            background: #16213e;
+            border-radius: 12px;
+            padding: 28px;
+            width: 100%;
+            max-width: 560px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .card h2 {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            color: #a8b2d8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        #question {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 24px;
+            color: #fff;
+            text-align: center;
+            min-height: 36px;
+        }
+
+        .vote-option { margin-bottom: 14px; }
+
+        .option-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 6px;
+            font-size: 0.95rem;
+        }
+
+        .option-name { color: #e2e8f0; }
+        .option-count { color: #e94560; font-weight: bold; }
+
+        .progress-bar-bg {
+            background: #0f3460;
+            border-radius: 8px;
+            height: 28px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .progress-bar-bg:hover { opacity: 0.85; }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #e94560, #0f3460);
+            border-radius: 8px;
+            transition: width 0.4s ease;
+            min-width: 4px;
+        }
+
+        .btn {
+            padding: 10px 22px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+
+        .btn:hover { opacity: 0.85; }
+        .btn-primary { background: #e94560; color: #fff; }
+        .btn-secondary { background: #0f3460; color: #fff; }
+
+        input[type="text"] {
+            background: #0f3460;
+            border: 1px solid #1a4a8a;
+            border-radius: 8px;
+            color: #fff;
+            padding: 10px 14px;
+            width: 100%;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"]::placeholder { color: #666; }
+
+        .admin-row {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        #no-session {
+            text-align: center;
+            color: #888;
+            padding: 20px 0;
+        }
+
+        #total-votes {
+            text-align: center;
+            color: #a8b2d8;
+            font-size: 0.9rem;
+            margin-top: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🗳️ VotingRealTime</h1>
+    <p id="status" class="disconnected">⚡ Conectando...</p>
+
+    <div class="card">
+        <h2>Pregunta activa</h2>
+        <div id="question">Esperando sesión...</div>
+        <div id="options-container">
+            <p id="no-session">No hay votación activa. El administrador debe crear una.</p>
+        </div>
+        <p id="total-votes"></p>
+    </div>
+
+    <div class="card">
+        <h2>⚙️ Administrador</h2>
+        <input type="text" id="input-question" placeholder="Escribe la pregunta...">
+        <input type="text" id="input-options" placeholder="Opciones separadas por coma (ej: Sí,No,Tal vez)">
+        <div class="admin-row">
+            <button class="btn btn-primary" onclick="createSession()">Crear sesión</button>
+            <button class="btn btn-secondary" onclick="resetVotes()">Resetear votos</button>
+        </div>
+    </div>
+
+    <!-- Librería cliente de SignalR desde CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/8.0.0/signalr.min.js"></script>
+    <script src="js/voting.js"></script>
+</body>
+</html>
