@@ -1,14 +1,14 @@
-// 1. Crear la conexión al Hub
-const connection = new signalR.HubConnectionBuilder()
-    .withUrl("/votingHub")
-    .withAutomaticReconnect()
-    .build();
+// 1. Crear la conexión al Hub, apunta a la url creada en el archivo program.cs
+const connection = new signalR.HubConnectionBuilder() 
+    .withUrl("/votingHub") // URL del Hub
+    .withAutomaticReconnect() // conexión automática
+    .build(); // construye la conexión
 
 // ─── Escuchar eventos del servidor ───────────────────────────────────────────
 
 // El servidor nos envía el estado actual al conectarnos (OnConnectedAsync)
-connection.on("ReceiveCurrentSession", function (session) {
-    renderSession(session);
+connection.on("ReceiveCurrentSession", function (session) { 
+    renderSession(session); 
 });
 
 // El servidor nos avisa cuando alguien crea una nueva sesión
@@ -23,14 +23,14 @@ connection.on("ReceiveVoteUpdate", function (options) {
 
 // ─── Iniciar la conexión ──────────────────────────────────────────────────────
 
-connection.start()
-    .then(function () {
-        document.getElementById("status").textContent = "✅ Conectado en tiempo real";
+connection.start() // inicia la conexión
+    .then(function () { 
+        document.getElementById("status").textContent = " Conectado en tiempo real"; 
         document.getElementById("status").className = "connected";
         console.log("Conectado al Hub de SignalR");
     })
     .catch(function (err) {
-        document.getElementById("status").textContent = "❌ Error de conexión";
+        document.getElementById("status").textContent = " Error de conexión";
         document.getElementById("status").className = "disconnected";
         console.error("Error al conectar:", err.toString());
     });
@@ -39,7 +39,7 @@ connection.start()
 
 // Votar por una opción - llama al método Vote del Hub directamente
 function castVote(option) {
-    connection.invoke("Vote", option)
+    connection.invoke("Vote", option) // Esto llega al método Vote() de VotingHub
         .catch(function (err) {
             console.error("Error al votar:", err.toString());
         });
@@ -50,7 +50,7 @@ async function createSession() {
     const question = document.getElementById("input-question").value.trim();
     const optionsRaw = document.getElementById("input-options").value.trim();
 
-    if (!question || !optionsRaw) {
+    if (!question || !optionsRaw) { // Si no se completa la pregunta o las opciones, muestra un mensaje de error
         alert("Completa la pregunta y las opciones");
         return;
     }

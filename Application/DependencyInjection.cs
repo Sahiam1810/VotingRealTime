@@ -8,12 +8,12 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Application
 {
-    public static class DependencyInjection
+    public static class DependencyInjection 
     {
         public static IServiceCollection AddApplicationServices(
             this IServiceCollection services)
         {
-            services.AddSingleton<IVoteService, VoteService>();
+            services.AddSingleton<IVoteService, VoteService>(); // una sola instancia de VoteService
             return services;
         }
     }

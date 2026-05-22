@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.SignalR;
 
 namespace Api.Hubs
 {
-    public class VotingHub : Hub
+    public class VotingHub : Hub // Al heredar de Hub, la clase obtiene acceso a Clients, a Context (quién está conectado), y los métodos de ciclo de vida como OnConnectedAsync, OnDisconnectedAsync, etc.
     {
         private readonly IVoteService _voteService;
 
@@ -19,12 +19,9 @@ namespace Api.Hubs
         // El cliente llama a este método para votar
         public async Task Vote(string option)
         {
-            _voteService.CastVote(option);
-
-            var session = _voteService.GetCurrentSession();
-
-            // Enviar resultados actualizados a TODOS los clientes conectados
-            await Clients.All.SendAsync("ReceiveVoteUpdate", session.Options);
+            _voteService.CastVote(option); // // 1. Guarda el voto en memoria
+            var session = _voteService.GetCurrentSession(); // 2. Lee el estado actualizado
+            await Clients.All.SendAsync("ReceiveVoteUpdate", session.Options); // 3. Avisa a todos
         }
 
         // Se ejecuta automáticamente cuando un cliente se conecta
@@ -32,8 +29,7 @@ namespace Api.Hubs
         {
             var session = _voteService.GetCurrentSession();
 
-            // Enviar estado actual SOLO al cliente que se acaba de conectar
-            await Clients.Caller.SendAsync("ReceiveCurrentSession", session);
+            await Clients.Caller.SendAsync("ReceiveCurrentSession", session);  // Enviar estado actual SOLO al cliente que se acaba de conectar
 
             await base.OnConnectedAsync();
         }

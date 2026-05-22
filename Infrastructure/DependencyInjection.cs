@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Infrastructure
 {
+    // existe por arquitectura, en producción aquí iría la base de datos, etc.
     public static class DependencyInjection
     {
         public static IServiceCollection AddInfrastructureServices(
