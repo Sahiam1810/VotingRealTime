@@ -285,6 +285,12 @@ ngrok generará una URL pública como `https://abc123.ngrok-free.app`. Comparte 
 
 Sahiam Valentina Esteban
 
+## Documentacion Taller guiado paso a paos
+https://drive.google.com/file/d/19ngq3Ahxk3voa0YaEr2kJvEpaTAqf9T4/view?usp=sharing
+
+## Video YouTube
+https://www.youtube.com/watch?v=0lXwHg2FCzI
+
 ## Link temporal de ngrok
 
 https://spiffy-adaline-avid.ngrok-free.dev/index.html

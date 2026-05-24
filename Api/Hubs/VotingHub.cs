@@ -9,9 +9,9 @@ namespace Api.Hubs
 {
     public class VotingHub : Hub // Al heredar de Hub, la clase obtiene acceso a Clients, a Context (quién está conectado), y los métodos de ciclo de vida como OnConnectedAsync, OnDisconnectedAsync, etc.
     {
-        private readonly IVoteService _voteService; 
+        private readonly IVoteService _voteService;  // quí se declara que el Hub va a necesitar un IVoteService
 
-        public VotingHub(IVoteService voteService)
+        public VotingHub(IVoteService voteService) // el constructor recibe el servicio de votación
         {
             _voteService = voteService;
         }
@@ -35,3 +35,5 @@ namespace Api.Hubs
         }
     }
 }
+// Clients.Others 
+// Clients.client(id)
